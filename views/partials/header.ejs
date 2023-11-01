@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css"/>
     <title>PageTurners</title>
+    <link rel="icon" type="images/png" href="/images/logo.png" />
 </head>
 <body>
 <nav>
-    <img src="/images/camera.svg">
     <% if (user) { %>
+        <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+        <div class="dash">|</div>
         <a href="/books" <%- title === 'All Books' ? 'class="active"' : '' %>>ALL BOOKS</a>
-        <a href="/authors/new"	<%- title === 'Add Authors' ? 'class="active"' : '' %>>
-            ADD AUTHOR</a>
+        <div class="dash">|</div>
         <a href="/books/new" <%- title === 'Add Book' ? 'class="active"' : '' %>>ADD BOOK</a>
+        <div class="dash">|</div>
+        <a href="/authors/new"	<%- title === 'Add Authors' ? 'class="active"' : '' %>>ADD AUTHOR</a>
+        <div class="dash">|</div>
         <a href="/logout">LOG OUT</a>
     <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>

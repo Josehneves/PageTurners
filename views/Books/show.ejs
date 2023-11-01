@@ -8,18 +8,18 @@
   <!-- start cast list -->
   <div>Author:</div>
   <ul>
-    <%- book.author.map(p => 
-      `<li>${p.name} <small>${p.born.toLocaleDateString()}</small></li>`
+    <%- book.author.map(a => 
+      `<li>${a.name} <small>${a.born.toLocaleDateString()}</small></li>`
     ).join('') %>
   </ul>
   <!-- end cast list -->
 </section>
 <!-- add to cast form below this comment -->
-<form id="add-per-to-author" action="/books/<%= movie._id %>/author" method="POST">
+<form id="add-per-to-author" action="/books/<%= book._id %>/author" method="POST">
   <select name="authorId">
     <!-- Emit an option for each performer -->
-    <%- author.map(p => 
-      `<option value="${p._id}">${p.name}</option>`
+    <%- book.author.map(a => 
+      `<option value="${a._id}">${a.name}</option>`
     ).join('') %>
   </select>
   <button type="submit">Add to Book</button>

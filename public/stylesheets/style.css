@@ -1,13 +1,13 @@
 * {
   box-sizing: border-box;
-  font-family: Helvetica;
-  color: #424748;
+  font-family: "Bungee Shade", sans-serif;
 }
 
 body {
   margin: 0;
   height: 100vh;
   display: grid;
+  background-color: #506596;
   grid-template-rows: 50px 1fr;
   grid-template-areas:
     "nav"
@@ -16,54 +16,73 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #b8c0c2;
+  background-color: #c2c6d6;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   padding: 0 20px 0 30px;
 }
 
-nav > img {
-  width: 34px;
-  object-fit: contain;
-  margin-right: auto;
+.dash {
+  color:#506596;
 }
 
-body > main {
+h1 {
+  font-size: 90px;
+  font-size-adjust: 0.5;
+  color: #c2c6d6;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.logo {
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: 100px;
+}
+
+/* body > main {
   grid-area: main;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e8eceb;
+  background-color: green;
   padding: 20px;
   overflow-y: scroll;
-}
-
-body > main h1:first-child {
-  margin-bottom: 50px;
-}
+} */
 
 nav > a {
   margin: 20px;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
+  color: #506596;
 }
 
 nav > a:hover:not(.active) {
-  color: white;
-  background-color: #424748;
+  color: #c2c6d6;
+  background-color: #506596;
 }
 
 nav > a.active {
-  color: white;
+  color: #c2c6d6;
+  background-color: #506596;
   cursor: default;
 }
 
 #new-form {
   display: grid;
+  align-items: center;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
+  grid-template-columns: repeat(2, minmax(auto, 500px));
+  align-content: center;
+  text-align: right;
+  margin: 50px 50px 50px 50px;
 }
 
 #new-form *,
@@ -81,16 +100,18 @@ nav > a.active {
 }
 
 table {
-  font-size: 20px;
+  font-size: 30px;
+  color:#c2c6d6;
+  border: 150px;
 }
 
 table thead th {
   padding: 5px;
-  border-bottom: 2px solid #424748;
+  border-bottom: 2px solid #c2c6d6;
 }
 
 table td {
-  padding: 10px;
+  padding: 50px;
   text-align: center;
 }
 
@@ -130,7 +151,7 @@ table td {
 }
 
 #add-review-form input[type="submit"],
-#add-performer-form input[type="submit"] {
+#add-author-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
 }
@@ -189,4 +210,3 @@ hr {
   border-radius: 50%;
   height: 40px;
 }
-

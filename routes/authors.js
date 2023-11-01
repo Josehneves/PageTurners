@@ -5,11 +5,13 @@ const ensureLoggedIn = require("../config/ensureLoggedIn");
 
 // This router is mounted to a "starts with" path of '/'
 
-// GET /performers/new (new functionality)
+// GET /author/new (new functionality)
 router.get("/authors/new", ensureLoggedIn, authorsCtrl.new);
-// POST /performers (create functionality)
+// POST /authors (create functionality)
 router.post("/authors", ensureLoggedIn, authorsCtrl.create);
-// POST /movies/:id/performers (associate a performer with a movie)
-router.post("/books/:id/authors", ensureLoggedIn, authorsCtrl.addToCast);
+// POST /author/:id/author (associate a author with a book)
+router.post("/books/:id/authors", ensureLoggedIn, authorsCtrl.addToBook);
+// DELETE /books/:id/authors/:authroId (remove a author from a book)
+router.delete("/books/:id/authors/:authorId", ensureLoggedIn, authorsCtrl.removeFromBook);
 
 module.exports = router;

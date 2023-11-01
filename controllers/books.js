@@ -1,4 +1,5 @@
 const Book = require('../models/book');
+const Author = require('../models/author');
 
 module.exports = {
   index,
@@ -39,7 +40,11 @@ async function create(req, res) {
   }
   try {
     // Update this line because now we need the _id of the new movie
-    const book = await Book.create(req.body);
+    const book = await Book.create({...req.body, title: req.body.title, finishedOn: req.body.finishedOn})
+    const author = await Author.create({...req.body, name: req.body.authorName, born: req.body.born})
+
+    book.author.push(author)
+    book.save()
     // Redirect to the new movie's show functionality 
     res.redirect(`/books/${book._id}`);
   } catch (err) {

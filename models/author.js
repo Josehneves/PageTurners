@@ -15,4 +15,4 @@ const authorSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model("Performer", performerSchema);
+module.exports = mongoose.model("Author", authorSchema);

@@ -7,9 +7,10 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "PageTurners" });
 });
 
-router.get(
-  "/auth/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
+router.get("/auth/google",passport.authenticate("google", 
+  {
+    scope: ["profile", "email"],
+  })
 );
 
 router.get(
