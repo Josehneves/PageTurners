@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/stylesheets/">
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
     <title>PageTurners</title>
 </head>
 <body>
@@ -11,8 +11,8 @@
     <img src="/images/camera.svg">
     <% if (user) { %>
         <a href="/books" <%- title === 'All Books' ? 'class="active"' : '' %>>ALL BOOKS</a>
-        <!-- <a href="/authors/new"	<%- title === 'Add Authors' ? 'class="active"' : '' %>>
-            ADD AUTHOR</a> -->
+        <a href="/authors/new"	<%- title === 'Add Authors' ? 'class="active"' : '' %>>
+            ADD AUTHOR</a>
         <a href="/books/new" <%- title === 'Add Book' ? 'class="active"' : '' %>>ADD BOOK</a>
         <a href="/logout">LOG OUT</a>
     <% } else { %>
