@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<div>Before adding, please ensure that the Author is not in the following list:</div>
+<section id="badge-container">
+  <% authors.forEach(function(a) { %>
+    <article class="badge"><%= a.name %></article>
+  <% }) %>
+</section>
+
+<form id="add-author-form" action="/authors" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <input type="submit" value="Add Author">
+</form>
+
+<%- include('../partials/footer') %>
