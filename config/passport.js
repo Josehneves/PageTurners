@@ -1,6 +1,3 @@
-require("./config/database");
-require(".config/passport");
-
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 const User = require("../models/user");
@@ -34,6 +31,6 @@ passport.serializeUser(function (user, cb) {
     cb(null, user._id);
 });
 
-passport.deserializeUser(async function (useId, cb) {
+passport.deserializeUser(async function (userId, cb) {
         cb(null,await User.findById(userId));
 });
