@@ -1,11 +1,10 @@
 * {
   box-sizing: border-box;
-  font-family: "Bungee Shade", sans-serif;
 }
 
 body {
   margin: 0;
-  height: 100vh;
+  height: 80vh;
   display: grid;
   background-color: #506596;
   grid-template-rows: 50px 1fr;
@@ -15,38 +14,39 @@ body {
 }
 
 body > nav {
+  font-size: 2vw;
   grid-area: nav;
   background-color: #c2c6d6;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 20px 0 30px;
+  height: 5vw;
 }
 
 .dash {
-  color:#506596;
+  color: #506596;
 }
 
 h1 {
-  font-size: 90px;
-  font-size-adjust: 0.5;
+  font-size: 8vw;
   color: #c2c6d6;
   margin-left: auto;
   margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 15vh;
+  margin-bottom: 0vh;
 }
 
 .logo {
-  width: 30%;
-  display: block;
+  width: 25%;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  margin-top: auto;
-  margin-bottom: 100px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 
-/* body > main {
+body > main {
   grid-area: main;
   display: flex;
   flex-direction: column;
@@ -54,65 +54,97 @@ h1 {
   background-color: green;
   padding: 20px;
   overflow-y: scroll;
-} */
+}
 
 nav > a {
   margin: 20px;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
+  font-weight: bold;
   color: #506596;
 }
 
 nav > a:hover:not(.active) {
   color: #c2c6d6;
   background-color: #506596;
+  border-radius: 20px;
 }
 
 nav > a.active {
   color: #c2c6d6;
   background-color: #506596;
   cursor: default;
+  border-radius: 20px;
 }
 
 #new-form {
   display: grid;
   align-items: center;
-  grid-gap: 10px;
+  grid-gap: 20px;
   grid-template-columns: repeat(2, minmax(auto, 500px));
   align-content: center;
-  text-align: right;
-  margin: 50px 50px 50px 50px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #new-form *,
 #add-review-form *,
 #add-author-form * {
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 5px;
+  font-size: 2vw;
+  text-align: right;
+  padding: 10px;
+  border-radius: 15px;
+  color: #c2c6d6;
 }
 
 #new-form input[type="submit"] {
   grid-column: span 2;
-  width: 10rem;
+  border-radius: 50px;
+  border: 5px solid #c2c6d6;
+  width: 20rem;
   margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 10px;
+  font-weight: bold;
+  color: #506596;
+  background-color: #c2c6d6;
+  text-align: center;
+}
+
+#new-form input[type="submit"]:hover {
+  background-color: #506596;
+  color: #c2c6d6;
 }
 
 table {
-  font-size: 30px;
-  color:#c2c6d6;
-  border: 150px;
+  margin-top: 100px;
+  margin-bottom: auto;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 table thead th {
-  padding: 5px;
-  border-bottom: 2px solid #c2c6d6;
+  text-align: center;
+  font-size: 2vw;
+  color: #506596;
+  background-color: #c2c6d6;
+  border-radius: 10px;
 }
 
 table td {
   padding: 50px;
+  font-size: 2vw;
   text-align: center;
+  color: #c2c6d6;
+  border: solid 1px #c2c6d6;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #list td:nth-child(2),
@@ -121,28 +153,21 @@ table td {
 }
 
 #list a {
-  border-radius: 4px;
-  background-color: #b8c0c2;
-  padding: 4px;
+  border-radius: 10px;
+  background-color: #506596;
+  color: #c2c6d6;
+  padding: 10px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 1.5vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #list a:hover {
-  background-color: white;
+  background-color: #c2c6d6;
+  color: #506596;
 }
 
-#show-page {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
-}
-
-#show-page div:nth-child(even) {
-  font-weight: bold;
-}
-
-#add-review-form,
 #add-author-form {
   display: grid;
   grid-template-columns: auto auto;
@@ -150,7 +175,6 @@ table td {
   margin-bottom: 2rem;
 }
 
-#add-review-form input[type="submit"],
 #add-author-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
@@ -160,44 +184,127 @@ hr {
   color: #424748;
 }
 
+h2 {
+  color: #c2c6d6;
+  font-size: 4vw;
+  margin-top: 4vw;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #badge-container {
   display: flex;
   flex-wrap: wrap;
-  /* padding: 1rem; */
-  width: 80%;
-  border: 2px solid #b8c0c2;
+  padding: 1rem;
+  width: auto;
+  height: auto;
+  /* border: 2px solid #c2c6d6; */
   border-radius: 0.5rem;
-  margin: 0.5rem 0 2rem;
+  margin-top: 6vw;
+  margin-bottom: auto;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 .badge {
-  background-color: #b8c0c2;
+  color: #506596;
+  background-color: #c2c6d6;
+  border: 5px solid #c2c6d6;
   padding: 0.5rem;
   margin: 0.5rem;
   border-radius: 0.3rem;
-  font-size: 0.8rem;
+  font-size: 2vw;
   text-align: center;
+}
+
+.badge:hover {
+  background-color: #506596;
+  color: #c2c6d6;
+}
+
+#show-page {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-gap: 1rem;
+  color: #c2c6d6;
+  font-size: 2vw;
+  margin-top: 5vw;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #show-page ul {
   margin: 0 0 2rem;
-  padding: 0;
+  padding-left: 10px;
+  padding: 5px;
   list-style: none;
+  border-radius: 30px;
+  color: #c2c6d6;
 }
 
-#show-page li {
+h3 {
+  color: #c2c6d6;
+  font-size: 2.5vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h5 {
+  color: #c2c6d6;
+  font-size: 2.5vw;
+  margin-top: 3vw;
+  margin-bottom: 1vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#add-review-form {
+  display: grid;
+  align-items: center;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, (200px, 800px));
+  align-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#add-review-form input[type="submit"] {
+  grid-column: span 2;
+  border-radius: 50px;
+  border: 5px solid #c2c6d6;
+  width: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  padding: 10px;
+  font-size: 1.5vw;
   font-weight: bold;
+  color: #506596;
+  background-color: #c2c6d6;
+  text-align: center;
+}
+
+#add-review-form input[type="submit"]:hover {
+  background-color: #506596;
+  color: #c2c6d6;
 }
 
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 34px;
+  font-size: 3vw;
 }
 
 .login img {
-  height: 30px;
+  height: 3vw;
 }
 
 .review-user {
@@ -207,6 +314,8 @@ hr {
 }
 
 .review-user img {
-  border-radius: 50%;
-  height: 40px;
+  border-radius: 10px;
+  height: 60px;
+  width: 65px;
+  margin-right: 20px;
 }

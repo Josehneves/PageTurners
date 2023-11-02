@@ -1,31 +1,20 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Title: </div>
-  <div><%= book.title %></div>
-  <div>Finished On: </div>
-  <div><%= book.finishedOn %></div>
-  <!-- start cast list -->
-  <div>Author:</div>
+  <div class="bdata">Title: </div>
+  <div class="bdata"><%= book.title %></div>
+  <div class="bdata">Finished On: </div>
+  <div class="bdata"><%= book.finishedOn %></div>
+  <div class="bdata">Author:</div>
   <ul>
     <%- book.author.map(a => 
-      `<li>${a.name} <small>${a.born.toLocaleDateString()}</small></li>`
-    ).join('') %>
+      `<li>${a.name}</li>`
+    ) %>
   </ul>
   <!-- end cast list -->
 </section>
-<!-- add to cast form below this comment -->
-<form id="add-per-to-author" action="/books/<%= book._id %>/author" method="POST">
-  <select name="authorId">
-    <!-- Emit an option for each performer -->
-    <%- book.author.map(a => 
-      `<option value="${a._id}">${a.name}</option>`
-    ).join('') %>
-  </select>
-  <button type="submit">Add to Book</button>
-</form>
 
-<br><br><h2>Reviews</h2>
+<h3>Reviews</h3>
 <form id="add-review-form" method="POST"
   action="/books/<%= book._id %>/reviews">
   <label>Review:</label>
@@ -55,7 +44,7 @@
         <th>Date</th>
         <th>Review</th>
         <th>Rating</th>
-        <th></th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -70,7 +59,7 @@
           <td>
             <% if (user?._id.equals(r.user)) { %>
               <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
+                <button type="submit">Delete</button>
               </form>
             <% } %>
           </td>

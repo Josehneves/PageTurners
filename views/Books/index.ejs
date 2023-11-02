@@ -4,16 +4,22 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Finished<br />On</th>
-      <th></th>
+      <th>Finished On</th>
+      <th>Delete / Update</th>
     </tr>
   </thead>
   <tbody>
     <% books.forEach(function(b) { %>
     <tr>
-      <td><%= b.title %></td>
+      <td><a href="/books/<%= b._id %>"> <%= b.title %></a></td>
       <td><%= b.finishedOn %></td>
-      <td><a href="/books/<%= b._id %>">Add Review</a></td>
+      <td>
+        <% if (user?._id.equals(b.user)) { %>
+        <form action="/books/<%= b._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+        <% } %>
+      </td>
     </tr>
     <% }); %>
   </tbody>

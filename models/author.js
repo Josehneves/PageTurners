@@ -8,7 +8,6 @@ const authorSchema = new Schema(
       required: true,
       unique: true,
     },
-    born: Date,
   },
   {
     timestamps: true,
