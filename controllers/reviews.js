@@ -45,6 +45,9 @@ async function updateReview(req,res) {
 
 
 async function edit() {
-  const book = await Book.findById({ "reviews._id": req.params.id, "reviews.user": req.user._id});
-  res.render('books/edit', { title: 'Edit Review', book });
+  const tip = await Tip.findOne({
+    "reviews._id": req.params.id,
+    "reviews.user": req.user._id,
+  })
+  res.redirect(`reviews/${tip._id}`);
 }

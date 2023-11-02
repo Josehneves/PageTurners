@@ -5,7 +5,7 @@
     <tr>
       <th>Title</th>
       <th>Finished On</th>
-      <th>Delete / Update</th>
+      <th>Update</th>
     </tr>
   </thead>
   <tbody>
@@ -13,13 +13,14 @@
     <tr>
       <td><a href="/books/<%= b._id %>"> <%= b.title %></a></td>
       <td><%= b.finishedOn %></td>
+      <% if (user?._id.equals(b.user)) { %>
       <td>
-        <% if (user?._id.equals(b.user)) { %>
         <form action="/books/<%= b._id %>?_method=DELETE" method="POST">
-          <button type="submit">Delete</button>
+          <button class="dbt" type="submit">Delete</button>
         </form>
-        <% } %>
+        <a href="/books/<%= b._id %>/edit">Edit</a>
       </td>
+      <% } %>
     </tr>
     <% }); %>
   </tbody>

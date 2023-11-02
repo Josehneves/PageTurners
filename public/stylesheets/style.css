@@ -78,6 +78,28 @@ nav > a.active {
   border-radius: 20px;
 }
 
+.dbt {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #506596;
+  color: #c2c6d6;
+  font-weight: bold;
+  font-size: 1.3vw;
+  border: 5px solid #506596;
+}
+
+.dbt:hover {
+  background-color: #c2c6d6;
+  color: #506596;
+}
+
+.dbt.active {
+  background-color: #c2c6d6;
+  color: #506596;
+}
+
 #new-form {
   display: grid;
   align-items: center;
@@ -119,6 +141,27 @@ nav > a.active {
 #new-form input[type="submit"]:hover {
   background-color: #506596;
   color: #c2c6d6;
+}
+
+#teggleForm {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #506596;
+  color: #c2c6d6;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 5px solid #506596;
+}
+
+#teggleForm:hover {
+  background-color: #c2c6d6;
+  color: #506596;
+}
+
+#teggleForm.active {
+  background-color: #c2c6d6;
+  color: #506596;
 }
 
 table {

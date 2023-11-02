@@ -37,6 +37,11 @@ const bookSchema = new Schema(
         ref: "Author",
       },
     ],
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
     finishedOn: Date,
     reviews: [reviewSchema],
   },
