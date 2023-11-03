@@ -1,10 +1,11 @@
 <%- include('../partials/header') %>
 
+<h3>Reviews</h3>
 <section id="show-page">
   <div class="bdata">Title:</div>
-  <div class="bdata"><%= book.title %></div>
+  <div class="bdata2"><%= book.title %></div>
   <div class="bdata">Finished On:</div>
-  <div class="bdata"><%= book.finishedOn %></div>
+  <div class="bdata2"><%= book.finishedOn %></div>
   <div class="bdata">Author:</div>
   <ul>
     <%- book.author.map(a => `
@@ -13,17 +14,15 @@
   </ul>
   <!-- end cast list -->
 </section>
-
-<h3>Reviews</h3>
 <form
   id="add-review-form"
   method="POST"
   action="/books/<%= book._id %>/reviews"
 >
-  <label>Review:</label>
-  <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
+  <label class="reviewdata">Review:</label>
+  <textarea class="reviewinput" name="content"></textarea>
+  <label class="reviewdata">Rating:</label>
+  <select class="reviewinput2" name="rating">
     <option value="0" selected>0</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -51,8 +50,7 @@
     </tr>
   </thead>
   <tbody>
-    <% let total = 0 %> <% book.reviews.forEach(function(r) { %> <% total +=
-    r.rating %>
+    <% book.reviews.forEach(function(r) { %>
     <tr>
       <td class="review-user">
         <img
@@ -67,8 +65,13 @@
       </td>
       <td id="reviewForm" style="display: none">
         <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
-          <input type="text" name="content" value="<%= r.content %>" />
-          <button type="submit">Edit</button>
+          <input
+            class="review-edit-text"
+            type="text"
+            name="content"
+            value="<%= r.content %>"
+          />
+          <button class="review-edit-bt" type="submit">Edit</button>
         </form>
       </td>
       <td><%= r.rating %></td>
@@ -81,10 +84,6 @@
       <% } %>
     </tr>
     <% }); %>
-    <tr>
-      <td colspan="3"></td>
-      <td><strong><%= (total / book.reviews.length).toFixed(1) %></strong></td>
-    </tr>
   </tbody>
 </table>
 <% } else { %>

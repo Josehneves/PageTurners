@@ -4,7 +4,7 @@ module.exports = {
   create,
   delete: deleteReview,
   update: updateReview,
-  edit
+  // edit
 };
 
 async function create(req, res) {
@@ -44,10 +44,10 @@ async function updateReview(req,res) {
 }
 
 
-async function edit() {
-  const tip = await Tip.findOne({
-    "reviews._id": req.params.id,
-    "reviews.user": req.user._id,
-  })
-  res.redirect(`reviews/${tip._id}`);
-}
+// async function edit() {
+//   const tip = await Review.findOne({
+//     "reviews._id": req.params.id,
+//     "reviews.user": req.user._id,
+//   })
+//   res.redirect(`reviews/${tip._id}`);
+// }

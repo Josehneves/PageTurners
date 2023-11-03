@@ -74,5 +74,8 @@ async function updateBook(req, res) {
 async function edit(req, res) {
   const book = await Book.findById(req.params.id);
   if (!book.user.equals(req.user._id)) return res.redirect("/books");
+  const editDate = new Date();
+  book.editDate = editDate ;
+    await book.save();
   res.render("books/edit", { title: "Edit Book", book });
 }

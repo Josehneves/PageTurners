@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Cormorant+Garamond&display=swap" rel="stylesheet">
     <title>PageTurners</title>
     <link rel="icon" type="images/png" href="/images/logo.png" />
 </head>
@@ -16,7 +19,7 @@
         <div class="dash">|</div>
         <a href="/books/new" <%- title === 'Add Book' ? 'class="active"' : '' %>>ADD BOOK</a>
         <div class="dash">|</div>
-        <a href="/authors/index"	<%- title === 'Authors' ? 'class="active"' : '' %>>AUTHORS</a>
+        <a href="/authors"	<%- title === 'All Authors' ? 'class="active"' : '' %>>AUTHORS</a>
         <div class="dash">|</div>
         <a href="/logout">LOG OUT</a>
     <% } else { %>

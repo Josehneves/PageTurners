@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
 
-<form id="new-form" action="/books" method="POST">
-  <label>Title:</label>
-  <input type="text" name="title">
-  <label>Finished on:</label>
-  <input type="date" name="finishedOn">
-  <label>Author:</label>
-  <input type="text" name="authorName">
+<form id="new-form-add-book" action="/books" method="POST">
+  <label class="add-new-book">Title:</label>
+  <input class="add-new-book-input" type="text" name="title">
+  <label class="add-new-book">Finished on:</label>
+  <input class="add-new-book-input" type="date" name="finishedOn">
+  <label class="add-new-book">Author:</label>
+  <input class="add-new-book-input" type="text" name="authorName">
   <input type="submit" value="Add Book">
 </form>
 

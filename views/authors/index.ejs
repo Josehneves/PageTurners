@@ -2,7 +2,7 @@
 
 <section id="badge-container">
   <% authors.forEach(function(a) { %>
-  <article class="badge"><%= a.name %></article>
+  <article class="badge"><a class="badge-ancor" href="/authors/<%= a._id %>"><%= a.name %></a></article>
   <% }) %>
 </section>
 
