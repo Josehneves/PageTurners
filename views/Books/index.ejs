@@ -12,7 +12,7 @@
     <% books.forEach(function(b) { %>
     <tr>
       <td><a class="a-table-title" href="/books/<%= b._id %>"> <%= b.title %></a></td>
-      <td><%= b.finishedOn %></td>
+      <td><%= b.finishedOn.toDateString() %></td>
       <% if (user?._id.equals(b.user)) { %>
       <td>
         <form action="/books/<%= b._id %>?_method=DELETE" method="POST">

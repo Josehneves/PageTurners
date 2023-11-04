@@ -3,7 +3,7 @@
 <div class="grid-author-all-books-container">
   <div id="author-name"><%=author.name%></div>
   <% books.forEach(function(b) { %>
-  <a class="book-tile" href="/books/<% b._id %>"><%= b.title %></a>
+  <a class="book-tile" href="/books/<%= b._id %>"><%= b.title %></a>
   <% }) %>
 </div>
 

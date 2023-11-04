@@ -108,11 +108,12 @@ nav > a.active {
 #add-review-form *,
 #add-author-form * {
   font-size: 2vw;
-  /* padding: 10px; */
   border-radius: 15px;
 }
 
-.new-form-input {
+.new-form-input-title,
+.new-form-input-date,
+.new-form-input-author {
   display: block;
   background-color: #c2c6d6;
   color: #506596;
@@ -121,10 +122,17 @@ nav > a.active {
   padding: 2vw;
   width: 45vw;
   text-align: center;
-  margin-top: 10vw;
-  margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
+}
+
+.new-form-input-title {
+  margin-bottom: 20px;
+  margin-top: 30vh;
+}
+
+.new-form-input-date {
+  margin-bottom: 20px;
 }
 
 #new-form input[type="submit"] {
@@ -201,7 +209,7 @@ nav > a.active {
   color: #c2c6d6;
 }
 
-#teggleForm {
+.teggleForm {
   display:block;
   margin-left: auto;
   margin-right: auto;
@@ -214,12 +222,12 @@ nav > a.active {
   border: 5px solid #506596;
 }
 
-#teggleForm:hover {
+.teggleForm:hover {
   background-color: #c2c6d6;
   color: #506596;
 }
 
-#teggleForm.active {
+.teggleForm.active {
   background-color: #c2c6d6;
   color: #506596;
 }
@@ -292,7 +300,12 @@ table td {
   padding: 0px;
   text-decoration: none;
   font-size: 2.2vw;
-  border: 5px solid #c2c6d6;
+  padding: 8px;
+}
+
+.a-table-title {
+  font-weight: bold;
+  font-size: 2.3;
 }
 
 #list a:hover {
@@ -427,7 +440,7 @@ h5 {
 }
 
 .reviewdata {
-  text-align: left;
+  text-align: right;
   font-size: 2vw;
   color: #c2c6d6;
 }
@@ -469,7 +482,7 @@ h5 {
   margin-right: auto;
   margin-top: 20px;
   padding: 10px;
-  font-size: 1.5vw;
+  font-size: 2vw;
   font-weight: bold;
   color: #506596;
   background-color: #c2c6d6;
@@ -504,6 +517,8 @@ h5 {
 .book-tile {
   padding: 10px;
   margin: 10px;
+  text-decoration: none;
+  color: #c2c6d6;
 }
 
 .book-tile:hover {
