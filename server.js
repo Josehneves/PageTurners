@@ -1,5 +1,6 @@
 var createError = require("http-errors");
 var express = require("express");
+var PORT = process.env.PORT || 3080;
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
@@ -67,5 +68,9 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+app.listen(PORT, function () {
+  console.log(`Express is listening on port:${PORT}`);
+}
 
 module.exports = app;
