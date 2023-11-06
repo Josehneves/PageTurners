@@ -1,12 +1,12 @@
 var createError = require("http-errors");
 var express = require("express");
-var PORT = process.env.PORT;
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var session = require("express-session");
 var passport = require("passport");
 var methodOverride = require("method-override");
+var PORT = process.env.PORT || 3000;
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -69,12 +69,8 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(
-    "Express server listening on port %d in %s mode",
-    this.address().port,
-    app.settings.env
-  );
+app.listen(PORT, function () {
+  console.log(`Express is listening on port:${PORT}`);
 });
 
 module.exports = app;
