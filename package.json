@@ -20,5 +20,18 @@
     "morgan": "~1.9.1",
     "passport": "^0.6.0",
     "passport-google-oauth": "^2.0.0"
-  }
+  },
+  "description": "## Link to App",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Josehneves/PageTurners.git"
+  },
+  "author": "Jose Neves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Josehneves/PageTurners/issues"
+  },
+  "homepage": "https://github.com/Josehneves/PageTurners#readme"
 }
