@@ -2,6 +2,8 @@
 
 ## Link to App
 
+https://pageturners-509c55dda3a7.herokuapp.com
+
 ## Descripiton
 PageTurners is an online platform that brings book tracking to a virtual book club space. It's designed to help avid readers keep track of the books they've read and share their thoughts through reviews.
 
